@@ -8,32 +8,31 @@
   <script src="index.js"></script>
   <script src="assets/js/go.js"></script>
   <script src="assets/js/particles.js"></script>
-<style>
-  body {
-    display: none;
-  }
-</style>
-
-<script>
-  var password = localStorage.getItem("password");
-
-  if (password === "6785") {
-    document.body.style.display = "block";
-  } else {
-    while (password !== "6785") {
-      password = prompt("Please enter the password to access this website:");
-
-      if (password !== "6785") {
-        alert("Incorrect password. Please try again.");
-      }
+  <style>
+    body {
+      display: none;
     }
+  </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var password = localStorage.getItem("password");
 
-    localStorage.setItem("password", password);
+      if (password === "6785") {
+        document.body.style.display = "block";
+      } else {
+        while (password !== "6785") {
+          password = prompt("Please enter the password to access this website:");
 
-    document.body.style.display = "block";
-  }
-</script>
+          if (password !== "6785") {
+            alert("Incorrect password. Please try again.");
+          }
+        }
 
+        localStorage.setItem("password", password);
+        document.body.style.display = "";
+      }
+    });
+  </script>
       <link rel="stylesheet" href="assets/css/particles.css"/>
    <meta name="description" content="Interstellar Network plans on giving your school the fastest possible wifi speeds. Visit this site to find out more info." />
     <meta name="hilltopads-site-verification" content="1d864429d8ccfef6ce7ff276f3942b31e202fcdb" />
