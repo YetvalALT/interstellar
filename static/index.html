@@ -8,14 +8,18 @@
   <script src="index.js"></script>
   <script src="assets/js/go.js"></script>
   <script src="assets/js/particles.js"></script>
-	  <style>
-    body {
-      display: none;
-    }
-  </style>
-  <script>
-    var password = "";
+<style>
+  body {
+    display: none;
+  }
+</style>
 
+<script>
+  var password = localStorage.getItem("password");
+
+  if (password === "6785") {
+    document.body.style.display = "block";
+  } else {
     while (password !== "6785") {
       password = prompt("Please enter the password to access this website:");
 
@@ -24,12 +28,12 @@
       }
     }
 
+    localStorage.setItem("password", password);
 
-    var hiddenElements = document.querySelectorAll("body");
-    for (var i = 0; i < hiddenElements.length; i++) {
-      hiddenElements[i].style.display = "block";
-    }
-  </script>
+    document.body.style.display = "block";
+  }
+</script>
+
       <link rel="stylesheet" href="assets/css/particles.css"/>
    <meta name="description" content="Interstellar Network plans on giving your school the fastest possible wifi speeds. Visit this site to find out more info." />
     <meta name="hilltopads-site-verification" content="1d864429d8ccfef6ce7ff276f3942b31e202fcdb" />
