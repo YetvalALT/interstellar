@@ -4,14 +4,18 @@
   <title>Classes</title>
   <link rel="icon" type="image/x-icon" href="assets/images/branding/favicon/favicon.png">
 <link rel="stylesheet" href="assets/css/particles.css" />
-    <style>
-    body {
-      display: none;
-    }
-  </style>
-  <script>
-    var password = "";
+<style>
+  body {
+    display: none;
+  }
+</style>
 
+<script>
+  var password = localStorage.getItem("password");
+
+  if (password === "6785") {
+    document.body.style.display = "block";
+  } else {
     while (password !== "6785") {
       password = prompt("Please enter the password to access this website:");
 
@@ -20,12 +24,11 @@
       }
     }
 
+    localStorage.setItem("password", password);
 
-    var hiddenElements = document.querySelectorAll("body");
-    for (var i = 0; i < hiddenElements.length; i++) {
-      hiddenElements[i].style.display = "block";
-    }
-  </script>
+    document.body.style.display = "block";
+  }
+</script>
 <script src="assets/js/main.js"></script>
 <script src="./uv/uv.bundle.js"></script>
 <script src="./uv/uv.config.js"></script>
